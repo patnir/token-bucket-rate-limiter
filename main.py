@@ -17,6 +17,9 @@ class Bucket:
     def remove_token(self):
         self.tokens_remaining -= 1
 
+    def _raise_limit_exception():
+        raise Exception(f"429 error: Too many requests")
+
     def __str__(self) -> str:
         return f"{self.tokens_remaining} tokens remaining in bucket of size {self.size}"
 
