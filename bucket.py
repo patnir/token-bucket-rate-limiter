@@ -1,3 +1,6 @@
+from uuid import uuid4
+
+
 class Bucket:
     def __init__(self, size):
         """bucket with tokens
@@ -5,6 +8,7 @@ class Bucket:
         Args:
             size (int): size of the bucket
         """
+        self.id = str(uuid4())
         self.size = size
         self.tokens_remaining = size
 
